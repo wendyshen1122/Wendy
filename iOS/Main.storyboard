@@ -17,42 +17,52 @@
                         <viewControllerLayoutGuide type="top" id="xzS-6e-tgg"/>
                         <viewControllerLayoutGuide type="bottom" id="N5U-ti-BnN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wgF-9g-qCO">
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="wgF-9g-qCO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bU-oE-4rh">
-                                <rect key="frame" x="315" y="636" width="60" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxr-fL-gJX">
+                                <rect key="frame" x="0.0" y="637" width="307" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bU-oE-4rh">
+                                <rect key="frame" x="315" y="627" width="60" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="pDa-oZ-fu2"/>
+                                    <constraint firstAttribute="height" constant="40" id="7ng-cC-68Z"/>
+                                    <constraint firstAttribute="width" constant="60" id="XiF-An-eH6"/>
                                 </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" red="0.12518253882997499" green="0.10536314699521587" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="200" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d1w-3H-AQf">
-                                <rect key="frame" x="0.0" y="636" width="321" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fL-a8-Wuk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="635"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKb-pc-eLX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9bU-oE-4rh" firstAttribute="top" secondItem="JKb-pc-eLX" secondAttribute="bottom" constant="8" symbolic="YES" id="0Yk-Ua-r7k"/>
+                            <constraint firstItem="JKb-pc-eLX" firstAttribute="top" secondItem="wgF-9g-qCO" secondAttribute="top" id="8PI-jm-aMh"/>
+                            <constraint firstItem="zxr-fL-gJX" firstAttribute="baseline" secondItem="9bU-oE-4rh" secondAttribute="baseline" id="EgR-Ur-oH2"/>
+                            <constraint firstItem="9bU-oE-4rh" firstAttribute="height" secondItem="zxr-fL-gJX" secondAttribute="height" id="JxA-zw-Sso"/>
+                            <constraint firstItem="zxr-fL-gJX" firstAttribute="leading" secondItem="wgF-9g-qCO" secondAttribute="leading" id="UGL-iC-Lq4"/>
+                            <constraint firstAttribute="trailing" secondItem="9bU-oE-4rh" secondAttribute="trailing" id="cTt-0r-PDj"/>
+                            <constraint firstItem="N5U-ti-BnN" firstAttribute="top" secondItem="9bU-oE-4rh" secondAttribute="bottom" id="cw2-dR-Adx"/>
+                            <constraint firstItem="9bU-oE-4rh" firstAttribute="leading" secondItem="zxr-fL-gJX" secondAttribute="trailing" constant="8" symbolic="YES" id="fKF-Np-HDZ"/>
+                            <constraint firstAttribute="trailing" secondItem="JKb-pc-eLX" secondAttribute="trailing" id="pZU-91-e80"/>
+                            <constraint firstItem="JKb-pc-eLX" firstAttribute="leading" secondItem="wgF-9g-qCO" secondAttribute="leading" id="vcn-s8-zJP"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="btnLogin" destination="9bU-oE-4rh" id="W4O-6d-F3h"/>
-                        <outlet property="txtPassword" destination="d1w-3H-AQf" id="TIk-tH-z5O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZQ-mo-1JS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144.80000000000001" y="-231.63418290854574"/>
+            <point key="canvasLocation" x="144.375" y="-232.3943661971831"/>
         </scene>
     </scenes>
 </document>
