@@ -6,7 +6,7 @@ namespace Wendy.iOS
 {
 	public partial class MyWebViewController : UIViewController
 	{
-		public MyWebViewController() : base("MyWebViewController", null)
+		public MyWebViewController(IntPtr handle) : base(handle)
 		{
 		}
 

@@ -7,20 +7,22 @@ namespace Wendy.Droid
 	[Activity(Label = "Wendy", MainLauncher = true, Icon = "@mipmap/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
+		private EditText _txtAccount;
+
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
-			// Set our view from the "main" layout resource
-			SetContentView(Resource.Layout.Main);
+			// iOS Xcode Custom Class
+			// View - Controller Binding (Controller把View載入)
+			SetContentView(Resource.Layout.loginflow_loginview);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button>(Resource.Id.myButton);
-
-			button.Click += delegate { button.Text = $"{count++} clicks!"; };
+			// View's Element - Controller's UI Controller Binding
+			_txtAccount = FindViewById<EditText>(Resource.Id.loginflow_loginview_textaccount);
+		 	var _txtPassword = FindViewById<EditText>(Resource.Id.loginflow_loginview_textpassword);
+			var btnlogin = FindViewById<Button>(Resource.Id.loginflow_loginview_btnlogin);
+			btnlogin.Click += (sender, e) => { };
 		}
 	}
 }
