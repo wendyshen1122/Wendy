@@ -1,9 +1,9 @@
 ﻿using System;
 namespace Wendy
 {
-	public class MyClass
+	public class User
 	{
-		public MyClass()
+		public User()
 		{
 		}
 	}

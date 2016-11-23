@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 using UIKit;
 
@@ -6,8 +7,7 @@ namespace Wendy.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		int count = 1;
-
+		
 		public ViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -16,18 +16,20 @@ namespace Wendy.iOS
 		{
 			base.ViewDidLoad();
 
-			// Code to start the Xamarin Test Cloud Agent
-#if ENABLE_TEST_CLOUD
-			Xamarin.Calabash.Start ();
-#endif
+			//另開執行緒執行
+			Task.Run(() => {
 
-			// Perform any additional setup after loading the view, typically from a nib.
-			Button.AccessibilityIdentifier = "myButton";
-			Button.TouchUpInside += delegate
-			{
-				var title = string.Format("{0} clicks!", count++);
-				Button.SetTitle(title, UIControlState.Normal);
-			};
+				Task.Delay(2000); //UI延遲2秒
+
+				InvokeOnMainThread(() => {
+
+					PerformSegue("moveToLoginViewSegue", this); //切換到LoginView畫面
+				
+				});
+			
+			});
+
+
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -35,5 +37,7 @@ namespace Wendy.iOS
 			base.DidReceiveMemoryWarning();
 			// Release any cached data, images, etc that aren't in use.		
 		}
+
+
 	}
 }
